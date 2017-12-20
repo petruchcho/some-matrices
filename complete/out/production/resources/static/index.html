@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+
+<noscript>
+    <h2 style="color: #ff0000">
+        Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+        enabled. Please enable
+        Javascript and reload this page!
+    </h2>
+</noscript>
+
+<div id="main-content" class="container">
+
+    <div id="header">
+        <font color="white" size="5" face="Arial"><b>
+            Вычисление ортогональной функции Якоби k-го порядка</b>
+        </font>
+    </div> <br><br><br>
+
+    <label id="formulas">Выберите формулу:</label><br>
+    <br>
+    <form>
+        <input type="radio" id="1" name="formula" value="0" checked="checked"><label for="1"><span
+            style="display: inline-block; width: 15px"></span> Ортогональная функция Якоби</label>
+        <br>
+        <input type="radio" id="2" name="formula" value="1"><label for="2"><span
+            style="display: inline-block; width: 15px"></span>Производная ортогональной функции Якоби</label>
+        <br>
+        <input type="radio" id="3" name="formula" value="2"><label for="3"><span
+            style="display: inline-block; width: 15px"></span>Неопределенный интеграл от ортогональной функции
+        Якоби</label>
+    </form>
+
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="betta">betta</label><br>
+                    <input type="text" id="betta" class="form-control"><br>
+                    <br>
+                    <label for="gamma">gamma</label><br>
+                    <input type="text" id="gamma" class="form-control"><br>
+                    <br>
+                    <label for="order">Порядок</label><br>
+                    <input type="text" id="order" class="form-control"><br>
+                    <br>
+                    <button id="send" class="btn btn-default" type="submit">Посчитать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Результаты</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <div id="bottom">
+        <font color="white" face="Arial">
+            ©Самарский Университет 2017г.<br>
+            Безруков Д., Назарова Е., Пономарев Е., Сахибназарова В.
+        </font>
+    </div>
+</div>
+</body>
+</html>
